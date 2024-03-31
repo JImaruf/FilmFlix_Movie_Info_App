@@ -1,6 +1,6 @@
 # filmflix
-
-A new Flutter project.
+# Description
+This is a movie information app. Through this app user can know movies rating,top rated movies, upcomming movie details.
 
 ## Getting Started
 
