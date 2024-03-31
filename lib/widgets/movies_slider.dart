@@ -1,6 +1,8 @@
 
 import 'package:filmflix/models/moviesmodel.dart';
+import 'package:filmflix/pages/details_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'constants.dart';
 
@@ -22,17 +24,22 @@ class MoviesSlider extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.all(8.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Container(
-                color: Colors.redAccent,
-                height: 200,
-                width: 150,
-                child: Image.network(
-                    filterQuality: FilterQuality.high,
-                    fit: BoxFit.cover, Constants.imagebasePath+movieList[index].posterPath.toString()),
+            child: InkWell(
+              onTap: (){
+                Get.to(DetailsPage(singleMovie: movieList[index]));
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+
+                  height: 200,
+                  width: 150,
+                  child: Image.network(
+                      filterQuality: FilterQuality.high,
+                      fit: BoxFit.cover, Constants.imagebasePath+movieList[index].posterPath.toString()),
 
 
+                ),
               ),
             ),
           );
